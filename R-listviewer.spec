@@ -4,16 +4,12 @@
 #
 Name     : R-listviewer
 Version  : 2.1.0
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/listviewer_2.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/listviewer_2.1.0.tar.gz
 Summary  : 'htmlwidget' for Interactive Views of R Lists
 Group    : Development/Tools
 License  : Apache-2.0 MIT
-Requires: R-htmltools
-Requires: R-htmlwidgets
-Requires: R-reactR
-Requires: R-shiny
 BuildRequires : R-htmltools
 BuildRequires : R-htmlwidgets
 BuildRequires : R-reactR
@@ -21,9 +17,7 @@ BuildRequires : R-shiny
 BuildRequires : buildreq-R
 
 %description
-visualize or represent. Sometimes 'str()' is not enough, so this suite of
-    htmlwidgets is designed to help see, understand, and maybe even modify your R
-    lists.  The function 'reactjson()' requires a package
+[![npm](https://img.shields.io/npm/v/react-json-view.svg)](https://www.npmjs.com/package/react-json-view) [![npm](https://img.shields.io/npm/l/react-json-view.svg)](https://github.com/mac-s-g/react-json-view/blob/master/LISCENSE) [![Build Status](https://travis-ci.org/mac-s-g/react-json-view.svg)](https://travis-ci.org/mac-s-g/react-json-view) [![Coverage Status](https://coveralls.io/repos/github/mac-s-g/react-json-view/badge.svg?branch=master)](https://coveralls.io/github/mac-s-g/react-json-view?branch=master) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/react-json-view)
 
 %prep
 %setup -q -c -n listviewer
@@ -33,11 +27,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538938397
+export SOURCE_DATE_EPOCH=1552860774
 
 %install
+export SOURCE_DATE_EPOCH=1552860774
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1538938397
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -72,8 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library listviewer|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  listviewer || :
 
 
 %files
