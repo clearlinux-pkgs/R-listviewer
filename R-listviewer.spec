@@ -4,7 +4,7 @@
 #
 Name     : R-listviewer
 Version  : 3.0.0
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/listviewer_3.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/listviewer_3.0.0.tar.gz
 Summary  : 'htmlwidget' for Interactive Views of R Lists
@@ -19,28 +19,30 @@ BuildRequires : R-htmlwidgets
 BuildRequires : R-reactR
 BuildRequires : R-shiny
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-[![npm](https://img.shields.io/npm/v/react-json-view.svg)](https://www.npmjs.com/package/react-json-view) [![npm](https://img.shields.io/npm/l/react-json-view.svg)](https://github.com/mac-s-g/react-json-view/blob/master/LISCENSE) [![Build Status](https://travis-ci.org/mac-s-g/react-json-view.svg)](https://travis-ci.org/mac-s-g/react-json-view) [![Coverage Status](https://coveralls.io/repos/github/mac-s-g/react-json-view/badge.svg?branch=master)](https://coveralls.io/github/mac-s-g/react-json-view?branch=master) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/react-json-view)
+visualize or represent. Sometimes 'str()' is not enough, so this suite of
+    htmlwidgets is designed to help see, understand, and maybe even modify your R
+    lists.  The function 'reactjson()' requires a package
 
 %prep
 %setup -q -c -n listviewer
+cd %{_builddir}/listviewer
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572797770
+export SOURCE_DATE_EPOCH=1589827327
 
 %install
-export SOURCE_DATE_EPOCH=1572797770
+export SOURCE_DATE_EPOCH=1589827327
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
