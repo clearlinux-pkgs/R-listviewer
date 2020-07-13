@@ -4,7 +4,7 @@
 #
 Name     : R-listviewer
 Version  : 3.0.0
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/listviewer_3.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/listviewer_3.0.0.tar.gz
 Summary  : 'htmlwidget' for Interactive Views of R Lists
