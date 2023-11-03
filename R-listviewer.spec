@@ -5,7 +5,7 @@
 #
 Name     : R-listviewer
 Version  : 4.0.0
-Release  : 41
+Release  : 42
 URL      : https://cran.r-project.org/src/contrib/listviewer_4.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/listviewer_4.0.0.tar.gz
 Summary  : 'htmlwidget' for Interactive Views of R Lists
